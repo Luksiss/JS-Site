@@ -1,23 +1,44 @@
-const email = document.getElementById('email');
-const password = document.getElementById('password');
-const form = document.getElementById('form');
-const errorElement = document.getElementById('error');
+var count = 2;
+function validate() {
+var un = document.myform.username.value;
+var pw = document.myform.pword.value;
+var valid = false;
 
+var unArray = ["admin", "test"];  
+var pwArray = ["admin", "test"]; 
 
-form.addEventListener('submit', (e) => { 
-    let messages = []
-    if (password.value === '' || email.value == null) {
-    messages.push ('Requer senha')
-    }
+for (var i=0; i <unArray.length; i++) {
+if ((un == unArray[i]) && (pw == pwArray[i])) {
+valid = true;
+break;
+}
+}
 
-    if (messages.length > 0) {   
-   
-    errorElement.innertext = messages.join(' , ')
-    }
-    e.preventDefault();
-  
-})
+if (valid) {
+alert ("Logado com sucesso!");
+window.location = "http://www.google.com";
+return false;
+}
 
+var t = " tentativas";
+if (count == 1) {t = " tentativas"}
 
+if (count >= 1) {
+alert ("E-mail ou senha invalidos. Você tem " + count + t + " restantes...");
+document.myform.username.value = "";
+document.myform.pword.value = "";
+setTimeout("document.myform.username.focus()", 25);
+setTimeout("document.myform.username.select()", 25);
+count --;
+}
 
-    
+else {
+alert ("Acabaram suas tentativas!");
+document.myform.username.value = "Tente outra hora!";
+document.myform.pword.value = "";
+document.myform.username.disabled = true;
+document.myform.pword.disabled = true;
+return false;
+}
+
+}

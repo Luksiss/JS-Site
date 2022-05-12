@@ -4,15 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="Site.css"/>
+<script type="text/javascript" src="Site.js"></script>
+
 </head>
 
 <body>
-    <div id="error"> 
-        <form id="form" >
+
+    <div> 
+        <form name="myform" >
     <h3> Log in</h3>
-    <input id="email" type="text" name="email" placeholder="E-mail" />
-    <input id="password" type="password" name="senha" placeholder="Senha" />
-    <input type="submit" name="acao" placeholder="Enviar" />
+    <input type="text" name="username" placeholder="E-mail" />
+    <input type="password" name="pword" placeholder="Senha" />
+    <input  type="button" value="Log In" name="Submit" placeholder="Enviar" onclick= "validate()" />
         </form>
     </div>
     

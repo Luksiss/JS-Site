@@ -1,3 +1,4 @@
+//#region validate
 var count = 2;
 function validate() {
 var un = document.myform.username.value;
@@ -13,13 +14,15 @@ valid = true;
 break;
 }
 }
-
+//#endregion
+//#region sucesso
 if (valid) {
 alert ("Logado com sucesso!");
 window.location = "http://www.google.com";
 return false;
 }
-
+//#endregion
+//#region tentativas
 var t = " tentativas";
 if (count == 1) {t = " tentativas"}
 
@@ -42,3 +45,4 @@ return false;
 }
 
 }
+//#endregion

@@ -13,6 +13,7 @@ body{background-color: #424292;}
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    border-radius: 20px;
     }
     
     form h3 {text-align: center;
